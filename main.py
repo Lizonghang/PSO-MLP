@@ -4,7 +4,11 @@ from pso import pso
 
 if __name__ == "__main__":
     """Usage
+    [Search Hyperparameters via Bayesian Optimization]
     python3 main.py -n 100 -e 10 -s 1
+
+    [Train MLP model directly]
+    python3 main.py -n 1000 -e 1000 -m gbest
     """
     parser = argparse.ArgumentParser()
     parser.add_argument("-c1", "--c1", type=float, default=0.7184)
@@ -12,8 +16,8 @@ if __name__ == "__main__":
     parser.add_argument("-w", "--w", type=float, default=0.1450)
     parser.add_argument("-k", "--k", type=int, default=10)
     parser.add_argument("-p", "--p", type=int, default=2)
-    parser.add_argument("-n", "--n-particles", type=int, default=10000)
-    parser.add_argument("-e", "--epochs", type=int, default=10000)
+    parser.add_argument("-n", "--n-particles", type=int, default=1000)
+    parser.add_argument("-e", "--epochs", type=int, default=1000)
     parser.add_argument("-m", "--mode", type=str, default="gbest")
     parser.add_argument("-s", "--search", type=int, default=0)
     parser.add_argument("-l", "--log-dir", type=str, default="./logs.json")
